@@ -1,3 +1,17 @@
 Git init and Git commit 
 add some new lines
 add something for 3 times
+git diff command
+Tác dụng chính của git diff:
+    Hiển thị thay đổi chưa được staged (chưa thêm vào staging area):
+        Khi bạn chỉnh sửa các tệp trong thư mục làm việc (working directory) nhưng chưa chạy lệnh git add, lệnh git diff sẽ so sánh các tệp đã chỉnh sửa với phiên bản hiện tại trong staging area hoặc commit cuối cùng.
+        Ví dụ: Nếu bạn sửa một dòng trong tệp readme.md, chạy git diff sẽ hiển thị dòng nào đã bị xóa hoặc thêm vào.
+    Hiển thị thay đổi đã staged (đã thêm vào staging area):
+        Nếu bạn đã chạy git add để thêm các thay đổi vào staging area, bạn có thể dùng git diff --staged (hoặc git diff --cached) để xem sự khác biệt giữa staging area và commit cuối cùng.
+    So sánh giữa các commit hoặc nhánh (branch):
+        git diff cũng có thể được dùng để so sánh sự khác biệt giữa hai commit, hai nhánh, hoặc giữa một commit và trạng thái hiện tại.
+        Ví dụ: git diff main feature-branch sẽ hiển thị sự khác biệt giữa nhánh main và nhánh feature-branch.
+Khi nào nên dùng git diff?
+    Kiểm tra trước khi commit: Để xem bạn đã thay đổi gì trước khi chạy git add hoặc git commit.
+    Xác định sự khác biệt giữa các phiên bản: Giúp bạn hiểu rõ những gì đã thay đổi giữa các nhánh hoặc commit.
+    Debug hoặc review code: Hữu ích khi bạn muốn kiểm tra chi tiết từng thay đổi.
