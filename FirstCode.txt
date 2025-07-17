@@ -1,2 +1,3 @@
 Git init and Git commit 
 add some new lines
+add something for 3 times
