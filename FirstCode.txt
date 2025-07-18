@@ -3,7 +3,7 @@ add some new lines
 xoa dong nay va sua moi
 submit data to the database
 
-git diff command : git diff --staged
+#git diff command : git diff --staged
 Tác dụng chính của git diff:
     Hiển thị thay đổi chưa được staged (chưa thêm vào staging area):
         Khi bạn chỉnh sửa các tệp trong thư mục làm việc (working directory) nhưng chưa chạy lệnh git add, lệnh git diff sẽ so sánh các tệp đã chỉnh sửa với phiên bản hiện tại trong staging area hoặc commit cuối cùng.
@@ -18,4 +18,37 @@ Khi nào nên dùng git diff?
     Xác định sự khác biệt giữa các phiên bản: Giúp bạn hiểu rõ những gì đã thay đổi giữa các nhánh hoặc commit.
     Debug hoặc review code: Hữu ích khi bạn muốn kiểm tra chi tiết từng thay đổi.
 
-Git remove file: 
+Git remove file: git rm -r --cached + "fileName"
+    git rm: Là lệnh trong Git dùng để xóa file hoặc thư mục khỏi index (staging area) và/hoặc working directory. 
+        Khi kết hợp với các tùy chọn, nó có thể chỉ xóa khỏi Git mà không ảnh hưởng đến file trên đĩa.
+    -r: Tùy chọn "recursive", cho phép xóa toàn bộ thư mục và nội dung bên trong nó một cách đệ quy. 
+        Nếu không có -r, lệnh chỉ áp dụng cho file riêng lẻ, và sẽ báo lỗi với thư mục.
+    --cached: Tùy chọn này chỉ định rằng file hoặc thư mục sẽ chỉ bị xóa khỏi index (staging area) của Git, 
+        chứ không xóa khỏi working directory (thư mục làm việc trên máy bạn). Điều này hữu ích khi bạn muốn ngừng 
+        theo dõi file/thư mục trong Git (như khi thêm vào .gitignore) mà vẫn giữ file trên đĩa
+
+#git repository:
+    sử dụng ssh trong git repository:
+        Cách tạo 1 folder trong git: mkdir folderName
+            cách tạo 1 file vs 1 dòng note: echo "dòng note được ghi trong file" >> fileName.txt
+            nếu bạn muốn xem nội dung trong file thì: cat fileName.txt(tùy kiểu đuôi của file mà đổi)
+
+            vẫn khởi tạo như thường init, add ., commit
+            ssh-keygen -o
+            (nếu có)Overwrite: thì ghi yes
+            tiếp theo nếu muốn có passphrase thì nhập vào ko thì để trống
+            xác nhận  passphprase
+            Đã tạo được file và gõ: cd để về lại Admin@MSI(userName)
+            ls -a: sẽ thấy 1 file có tên là .ssh
+            gõ: cd .ssh
+            sau đấy gõ ls -a: sẽ thấy fileName và fileName.pub(đây là key public mà người khác có cũng có thể đẩy code lên git repo của bạn)
+            gõ: cat fileName.pub thì sẽ ra key và copy
+#Working with Tag:
+các câu lềnh:-  git tag: để xem các tag
+             -  git tag -a V1.0 -m "add tage here": để thêm tag
+             -  git show V1.0: xem tag thứ v1.0 (chỉ có annotated mới dùng được gitshow)
+             -  :đẩy tag lên github
+    -lightweight tagging: là một loại tag đơn giản, chỉ chứa một tham chiếu (reference) đến một commit cụ thể trong kho lưu trữ. 
+                        Nó giống như một con trỏ (pointer) đến commit đó, không lưu trữ thêm thông tin như tác giả, ngày tạo, hoặc mô tả.
+    -annotated tagging: là một loại tag phức tạp hơn, lưu trữ thông tin bổ sung (metadata) như tên tác giả, email, ngày tạo, và một thông điệp mô tả (giống như thông điệp commit).
+                        Nó được lưu dưới dạng một đối tượng tag (tag object) trong cơ sở dữ liệu Git.
