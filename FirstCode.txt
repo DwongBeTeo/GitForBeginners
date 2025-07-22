@@ -64,3 +64,10 @@ các câu lềnh:-  git tag: để xem các tag
     delete: git branch -d nameBranch
 
 #Git branch pushing to remote repository
+    git push origin branchName
+
+#Git Merge:
+    git swtich main(hoặc nhánh muốn được hợp nhất)
+    git pull origin main(phải kéo xuống trước khi hợp nhất nhánh)
+    git merge branchName(nhánh mà cần hợp nhất với nhánh main)
+    git push origin main
