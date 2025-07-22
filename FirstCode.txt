@@ -54,4 +54,13 @@ các câu lềnh:-  git tag: để xem các tag
                         Nó được lưu dưới dạng một đối tượng tag (tag object) trong cơ sở dữ liệu Git.
 #Git branch Create:(feature1)
     Câu lệnh tạo 1 nhánh mới: git checkout -b nameBranch
-    Muốn xem có bao nhiêu branch: git branch
+    Hoặc sử dụng switch: git switch -c nameNewBranch
+    khi muốn quay lại nhánh trước đó: git switch -
+
+-    Muốn xem có bao nhiêu branch: git branch
+#Git add -p (thêm có chọn lọc)
+    khi bạn sử nhiều file thì có thể add -p để chọn ra những phải nào sẽ được add 1 cách có chọn lọc
+#Git delete branch:
+    delete: git branch -d nameBranch
+
+#Git branch pushing to remote repository
